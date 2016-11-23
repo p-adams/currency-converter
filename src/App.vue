@@ -1,10 +1,30 @@
 <template>
   <div id="app">
-    <ul>
+    <!--<ul>
       <li v-for="currency in currencies">
           {{currency.id}} - {{currency.curr}}
       </li>
-    </ul>
+    </ul>-->
+    <h1>Currency Coverter</h1>
+    
+      <table>
+        <tr>
+          <td>
+            <input type="text">
+          </td>
+          <td>
+            <select>
+                <option v-for="currency in currencies">{{currency.id}}</option>
+            </select>
+          </td>
+          <td>
+             <select>
+                <option v-for="currency in currencies">{{currency.id}}</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    
   </div>
 </template>
 
@@ -35,5 +55,12 @@ export default {
 </script>
 
 <style>
-
+  table, tr, td{
+    width: 50%;
+    height: 50%;
+    border: 1px solid black;
+  }
+  #table{
+    border: 1px solid blue;
+  }
 </style>
