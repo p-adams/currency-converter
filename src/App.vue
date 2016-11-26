@@ -8,29 +8,24 @@
         <div class="grid-content bg-purple">
           <el-form :inline="true" :model="formInline" class="demo-form-inline">
         <el-form-item>
-          {{curr}}
           <el-input v-model="curr"></el-input>
         </el-form-item>
         <el-form-item>
-          <h3>Base currency: {{a}} </h3>
-          {{curra}}
           <el-select v-model="curra" @change="loadConversions" placeholder="choose currency">
             <el-option v-for="currency in currencyData"
-                       :label="currency.id" 
                        :value="currency.id">{{currency.id}} - {{currency.curr}}
             </el-option>
           </el-select>
         </el-form-item>
         <el-form-item>
-          <h3>Quote currency: {{b}}</h3>
-          {{currb}}
           <el-select v-model="currb" placeholder="choose currency">
-            <el-option v-for="currency in currencyData"
-                       :label="currency.id" 
-                       :value="currency.id">{{currency.id}} - {{currency.curr}}
+            <el-option  v-for="currency in conv"
+                      :label="currency.id"
+                      :value="currency.curr">
             </el-option>
           </el-select>
-        </el-form-item>  
+        </el-form-item>
+        
         <el-form-item>
           <el-button type="primary"><i class="el-icon-arrow-right"></i></el-button>
         </el-form-item>
@@ -66,6 +61,7 @@ export default {
   data () {
     return {
       currencyData: [],
+      conv: [],
         curr: '',
         curra: '',
         currb: ''
@@ -73,20 +69,23 @@ export default {
   },
     methods: {
       loadConversions(){
+        var self = this
         axios.get('http://api.fixer.io/latest?base=' + this.curra)
         .then(function (response) {
         _.forIn(response.data.rates, function(value, key) {
-          console.log(value, key)
+            self.conv.push({id: key, curr: value})
           })
         })
         .catch(function (error) {
           console.log(error);
         });
+        this.conv = []
       }     
   },
   computed: {
    convert(){
-      return this.curr * this.currb
+    
+      return (this.curr * this.currb).toFixed(2)
     },
     a(){
       var self = this
