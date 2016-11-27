@@ -30,6 +30,7 @@
           <el-button type="primary" @click="convert"><i class="el-icon-arrow-right"></i></el-button>
         </el-form-item>
       </el-form>
+      <transition name="fade">
       <el-table v-if="clicked"
           :data="cc"
           style="width: 100%">
@@ -52,6 +53,7 @@
             label="Total">
           </el-table-column>
     </el-table>
+    <transition>
         </div>
       </el-col>
       <el-col :span="11">
@@ -172,5 +174,11 @@ export default {
       font-family: 'helvetica';
       color: ghostwhite;
       font-size: 20px large;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .10s;
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0;
   }
 </style>
