@@ -1,6 +1,6 @@
 # currency-converter
 
-> currency converter created with Vue.js
+> currency converter created with Vue.js and Element
 
 ## Build Setup
 

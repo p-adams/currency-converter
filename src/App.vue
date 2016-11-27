@@ -21,8 +21,7 @@
           <el-select v-model="currB" placeholder="choose currency">
             <el-option v-for="currency in conv"
                       :label="currency.id"
-                      :value="currency.curr"
-                      
+                      :value="currency.curr"                   
                       >
             </el-option>
           </el-select>
@@ -31,7 +30,6 @@
           <el-button type="primary" @click="convert"><i class="el-icon-arrow-right"></i></el-button>
         </el-form-item>
       </el-form>
-
       <el-table v-if="clicked"
           :data="cc"
           style="width: 100%">
@@ -54,14 +52,6 @@
             label="Total">
           </el-table-column>
     </el-table>
-
-
-
-
-
-
-
-
         </div>
       </el-col>
       <el-col :span="11">
@@ -83,8 +73,7 @@
             </el-table-column>
           <el-table-column
               prop="name"
-              label="Name"
-              
+              label="Name"     
               >
               </div>
             </el-table-column>
@@ -92,16 +81,6 @@
         </div>
         </el-col>
       </el-row>
-     
-
-     
-
-
-
-
-
-
-
   </div>
 </template>
 
