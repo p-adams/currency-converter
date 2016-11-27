@@ -176,7 +176,7 @@ export default {
       font-size: 20px large;
   }
   .fade-enter-active, .fade-leave-active {
-    transition: opacity .10s;
+    transition: opacity .11s;
   }
   .fade-enter, .fade-leave-active {
     opacity: 0;
