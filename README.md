@@ -9,6 +9,10 @@ Currency Converter currently only supports most of the world's leading currencie
 ## Usage
 
 ``` bash
+
+# clone the repo
+git clone https://github.com/p-adams/currency-converter
+
 # install dependencies
 npm install
 
