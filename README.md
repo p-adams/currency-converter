@@ -1,18 +1,18 @@
 # currency-converter
 
-> currency converter created with Vue.js and Element
+> currency converter created with Vue.js and Element UI
 
-## Build Setup
+Currency Converter leverages Fixer.io's foreign exchange rates and currency conversion API to deliver reliable, up-to-date currency rates and accurate currency conversions.
+
+Currency Converter currently only supports most of the world's leading currencies; however, there are plans to offer more currency rates and conversions in the future.
+
+## Usage
 
 ``` bash
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# run the server
 npm run dev
 
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+``` 
