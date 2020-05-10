@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>currency-converter</title>
+    <meta charset="UTF-8" />
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic" />
   </head>
   <body>
     <div id="app"></div>
-    <script src="/dist/build.js"></script>
+    <script type="module">
+      import { createApp } from "vue";
+      import App from "./App.vue";
+
+      createApp(App).mount("#app");
+    </script>
   </body>
 </html>
